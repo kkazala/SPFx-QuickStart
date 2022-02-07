@@ -26,7 +26,7 @@ export default class QuickStartWebPart extends BaseClientSideWebPart<IQuickStart
     if (this.properties.logLevel && this.properties.logLevel in [0, 1, 2, 3, 99]) {
       Logger.activeLogLevel = this.properties.logLevel;
     }
-    Logger.write(`${LOG_SOURCE} Initialized PanelCommandSet`); 
+    Logger.write(`${LOG_SOURCE} Initialized QuickStartWebPart`); 
     
     return Promise.resolve();
   }
