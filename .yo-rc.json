@@ -1,0 +1,13 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "packageManager": "pnpm",
+    "plusBeta": false,
+    "isCreatingSolution": true,
+    "environment": "spo",
+    "version": "1.13.1",
+    "libraryName": "spfx-quickstart",
+    "libraryId": "bed87fa2-f91f-40c5-b23b-2a2fd5c11017",
+    "isDomainIsolated": false,
+    "componentType": "webpart"
+  }
+}
