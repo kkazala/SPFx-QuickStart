@@ -31,4 +31,10 @@ const eslintSubTask = build.subTask('gulpESLintNew', function (gulp, buildOption
 
 build.rig.addPreBuildTask(build.task('eslint-new', eslintSubTask));
 
+/* fast-serve */
+const { addFastServe } = require("spfx-fast-serve-helpers");
+addFastServe(build);
+/* end of fast-serve */
+
 build.initialize(require('gulp'));
+

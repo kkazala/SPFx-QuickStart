@@ -6,7 +6,8 @@
   "scripts": {
     "build": "gulp bundle",
     "clean": "gulp clean",
-    "test": "gulp test"
+    "test": "gulp test",
+    "serve": "gulp bundle --custom-serve --max_old_space_size=4096 && fast-serve"
   },
   "dependencies": {
     "@microsoft/sp-core-library": "1.13.1",
@@ -32,6 +33,7 @@
     "eslint": "^8.8.0",
     "eslint-plugin-react": "^7.28.0",
     "gulp": "~4.0.2",
-    "gulp-eslint-new": "^1.3.0"
+    "gulp-eslint-new": "^1.3.0",
+    "spfx-fast-serve-helpers": "~1.13.0"
   }
 }
