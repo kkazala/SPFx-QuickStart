@@ -22,7 +22,8 @@
     "description": { "default": "QuickStart description" },
     "officeFabricIconFontName": "Page",
     "properties": {
-      "description": "QuickStart"
+      "description": "QuickStart",
+      "logLevel":3
     }
   }]
 }

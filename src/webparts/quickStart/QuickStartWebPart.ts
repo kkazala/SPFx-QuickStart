@@ -1,22 +1,35 @@
-import * as React from 'react';
-import * as ReactDom from 'react-dom';
 import { Version } from '@microsoft/sp-core-library';
 import {
   IPropertyPaneConfiguration,
   PropertyPaneTextField
 } from '@microsoft/sp-property-pane';
 import { BaseClientSideWebPart } from '@microsoft/sp-webpart-base';
-
+import {
+  ConsoleListener, Logger
+} from "@pnp/logging";
 import * as strings from 'QuickStartWebPartStrings';
-import QuickStart from './components/QuickStart';
+import * as React from 'react';
+import * as ReactDom from 'react-dom';
 import { IQuickStartProps } from './components/IQuickStartProps';
+import QuickStart from './components/QuickStart';
 
 export interface IQuickStartWebPartProps {
   description: string;
+  logLevel?: number;
 }
+const LOG_SOURCE = 'QuickStartWebPart';
 
 export default class QuickStartWebPart extends BaseClientSideWebPart<IQuickStartWebPartProps> {
 
+  public  onInit(): Promise<void> {
+    Logger.subscribe(new ConsoleListener());
+    if (this.properties.logLevel && this.properties.logLevel in [0, 1, 2, 3, 99]) {
+      Logger.activeLogLevel = this.properties.logLevel;
+    }
+    Logger.write(`${LOG_SOURCE} Initialized PanelCommandSet`); 
+    
+    return Promise.resolve();
+  }
   public render(): void {
     const element: React.ReactElement<IQuickStartProps> = React.createElement(
       QuickStart,
